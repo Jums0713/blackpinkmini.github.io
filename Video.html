@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACK PINK</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+</head>
+
+<body>
+    <div class="black"></div>
+    <div class="menu">
+    <a href="Home.html" title="Main Menu"><button><h1>Main Menu</h1></button></h3></a>
+    </div>
+<div class="containers">
+    <div class="main-video">
+        <div class="video">
+                <video src="vids/pinkvenom.mp4" controls autoplay></video>
+                <h3 class="name">PINK VENOM</h3>
+        </div>
+    </div>
+            <div class="video-list">
+                <div class="vid active">
+                    <video src="vids/pinkvenom.mp4" muted></video>
+                    <h3 class="name">PINK VENOM</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/whistle.mp4" muted></video>
+                    <h3 class="name">WHISTLE</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/stay.mp4" muted></video>
+                    <h3 class="name">STAY</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/boombayah.mp4" muted></video>
+                    <h3 class="name">BOOMBAYAH</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/shot down.mp4" muted></video>
+                    <h3 class="name">SHOT DOWN</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/lalisa.mp4" muted></video>
+                    <h3 class="name">LALISA</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/on the ground.mp4" muted></video>
+                    <h3 class="name">ON THE GROUND</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/DDU-DU DDU-DU.mp4" muted></video>
+                    <h3 class="name">DDU-DU-DDU-DU</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/Money.mp4" muted></video>
+                    <h3 class="name">MONEY</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/lovesick girls.mp4" muted></video>
+                    <h3 class="name">LOVESICK GIRLS</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/kill this love.mp4" muted></video>
+                    <h3 class="name">KILL THIS LOVE</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/Ice Cream.mp4" muted></video>
+                    <h3 class="name">ICE CREAM</h3>
+                </div>
+                <div class="vid">
+                    <video src="vids/how you like that.mp4" muted></video>
+                    <h3 class="name">HOW YOU LIKE THAT</h3>
+                </div>
+                
+            </div>    
+    </header> 
+</div>            
+
+<script>
+
+let listVideo = document.querySelectorAll('.video-list .vid');
+let mainVideo = document.querySelector('.main-video video');
+let name = document.querySelector('.main-video .name');
+
+
+listVideo.forEach(video =>{
+    video.onclick = () =>{
+        listVideo.forEach(vid => vid.classList.remove('active'));
+        video.classList.add('active');
+        if(video.classList.contains('active')){
+            let src = video.children[0].getAttribute('src');
+            mainVideo.src = src;
+            let text = video.children[1].innerHTML;
+            name.innerHTML = text;
+        };
+    };
+});
+
+
+</script>
+
+
+
+</body>
+</html>
